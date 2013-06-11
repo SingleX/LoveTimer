@@ -1,0 +1,47 @@
+@font-face{ 
+	font-family: 'Downlink';
+	src: url('Downlink.eot');
+	src: url('Downlink.eot?#iefix') format('embedded-opentype'),
+	     url('Downlink.woff') format('woff'),
+	     url('Downlink.ttf') format('truetype');
+}
+#page {
+	z-index: 2;
+	position: relative;
+	margin: auto;
+	margin-top: 150px;
+	width: 800px;
+	padding: 20px;
+	background: #000000;
+	font-family: Downlink,sans-serif,宋体;
+	font-size: 50px;
+	text-align: center;
+	color: #0A8ECC;
+	opacity: 0.7;
+	-moz-opacity: 0.7;
+	filter: alpha(opacity=70);
+}
+.txt {
+	font-family: 微软雅黑,sans-serif,宋体;
+	font-size: 20px;
+	text-align: center;
+}
+.bgstretcher {
+	background: black;
+	overflow: hidden;
+	width: 100%;
+	position: fixed !important;
+	z-index: 1;
+}
+.bgstretcher, .bgstretcher UL, .bgstretcher UL LI {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+}
+.bgstretcher UL, .bgstretcher UL LI {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}

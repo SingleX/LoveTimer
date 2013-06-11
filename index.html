@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Time - SingleX</title>
+<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="js/bgstretcher.js"></script>
+<link rel="stylesheet" href="css/css.css" />
+<script type="text/javascript">
+	$(document).ready(function(){
+        //  Initialize Backgound Stretcher	   
+		$(document).bgStretcher({
+			images: ['images/pic_1.jpg', 'images/pic_2.jpg', 'images/pic_3.jpg', 'images/pic_4.jpg'],
+			imageWidth: 1024, imageHeight: 768
+		});
+	});
+</script>
+<script type="text/javascript">
+	function Time(){
+		var StartTime = new Date("4/2/2011"); //截止时间(月 日 年)
+		var NowTime   = new Date();
+		var time      = NowTime.getTime() - StartTime.getTime();
+		
+		var DD = Math.floor(time/(1000 * 60 * 60 * 24));
+		var HH = Math.floor(time/(1000*60*60)) % 24;
+		var MM = Math.floor(time/(1000*60)) % 60;
+		var SS = Math.floor(time/1000) % 60;
+		var Remain=document.getElementById("page").getElementsByTagName('span');
+
+		for(var i=0; i <Remain.length; i++){
+			if(HH < 10) HH = "0" + HH;
+			if(MM < 10) MM = "0" + MM;
+			if(SS < 10) SS = "0" + SS;
+			Remain[i].innerHTML = DD + '天' + HH + '时' + MM + '分' + SS + '秒';
+		}
+		setTimeout("Time()", 1000);
+	}
+	window.onload=Time;
+</script>
+</head>
+<body>
+    <div id="page">
+		<div class="txt">@SingleX && @水漾涟漪sily</div>
+		<hr />
+		<span></span>
+		<hr />
+		<div class="txt">
+			<marquee scrollAmount=4>猪小辉，感冒快点好起来</marquee>
+		</div>
+    </div>
+</body>
+</html>
